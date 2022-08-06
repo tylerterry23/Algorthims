@@ -6,17 +6,25 @@
  
  https://youtu.be/g6TLB_tAaCI
 
+
+
   ## Time Complexity: O(n)
    - Reason being each element is visited twice at most
+
+
 
   ## Space Complexity: O(1)
    - constant space complexity 
    - The program doesn't contain any loop, recursive function, or call to any other functions.
 
+
+
  ## How to Identify 
    - Linked list, array, string
    - Find a substring of a certain quality
    - Analyze a portion of a linear data structure
+
+
 
 
   ## Example Problems:
@@ -25,8 +33,12 @@
    - String anagrams
 
 
+
+
   ## Visualization ([    ] = window): 
-  [1,3,2,6,-1] 4,1,8,2 -> 1 [3,2,6,-1,4] 1,8,2 -> 1,3 [2,6,-1,4,1] 8,2 -> ...
+  [1,3,2,6,-1] 4,1,8,2 -> 1 [3,2,6,-1,4] 1,8,2 -> 1,3 [2,6,-1,4,1] 8,2 -> 1,3,2[6,-1,4,1,8] 2 -> ...
+
+
 
 
   ## Sliding Window Pseudocode:
