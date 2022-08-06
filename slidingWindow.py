@@ -36,6 +36,8 @@
 #     - If the k element's average is > the threshold, add to the counter
 # 4. Return counter
 
+# Example:
+
 
 
 
