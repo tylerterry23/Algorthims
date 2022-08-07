@@ -1,46 +1,37 @@
 # Sliding Window algorithm
-# Sources Used:
-# https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
-# https://youtu.be/g6TLB_tAaCI
+# Sources can be found in README.md
 
-# Time Complexity: O(n)
-#   - Reason being each element is visited twice at most
-
-# Space Complexity: O(1)
-#   - constant space complexity 
-#   - The program doesn't contain any loop, recursive function, or call to any other functions.
-
-
-# How to Identify 
-#   - Linked list, array, string
-#   - Find a substring of a certain quality
-#   - Analyze a portion of a linear data structure
-
-
-# Example Problems:
-#   - Max sum subarray of size 'K
-#   - Longest substring with 'K' distinct characters
-#   - String anagrams
-
-
-# Visualization ([    ] = window): 
-#  [1,3,2,6,-1] 4,1,8,2 -> 1 [3,2,6,-1,4] 1,8,2 -> 1,3 [2,6,-1,4,1] 8,2 -> ...
-
-
-# Sliding Window Pseudocode:
-# 1. Find the sum of the first 'K' elements
-# 2. Add to counter if the average of sum over k is >= than the threshold
-# 3. For the rest of the array
-#     - slide window up by 1 element 
-#     - Calculate the average of these k elements 
-#     - If the k element's average is > the threshold, add to the counter
-# 4. Return counter
 
 # Example:
 
+def maxSum(arr, k):
+    # set a variable (n) to the length of the array
+    n = len(arr)
 
+    # n has to be greater than k
+    if n < k:
+        print("Error: n must be greater than k")
+        return -1
 
+    # compute the sum of the first window of size k
+    windowSum = sum(arr[0:k])
 
+    # variable to store the max sum (initialize to the sum of the first window)
+    maxSum = windowSum
+
+    # compute the sum of the next window by
+    # removing the first element of previous
+    # Window and adding last element of 
+    # the current window
+    for i in range(n - k):
+        windowSum - windowSum - arr[i] + arr[i + k]
+        maxSum = max(windowSum, maxSum)
+
+    return maxSum
+
+arr = [1, 4, 2, 10, 2, 3, 1, 0, 20]
+k = 4
+print(maxSum(arr, k))
 
 
     
