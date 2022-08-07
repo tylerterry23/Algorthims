@@ -24,12 +24,13 @@ def maxSum(arr, k):
     # Window and adding last element of 
     # the current window
     for i in range(n - k):
-        windowSum - windowSum - arr[i] + arr[i + k]
-        maxSum = max(windowSum, maxSum)
+        windowSum = windowSum - arr[i] + arr[i + k]
+        if windowSum > maxSum:
+            maxSum = windowSum
 
     return maxSum
 
-arr = [1, 4, 2, 10, 2, 3, 1, 0, 20]
+arr = [1, 4, 2, 10, 2, 3, 1, 0]
 k = 4
 print(maxSum(arr, k))
 
