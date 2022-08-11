@@ -15,6 +15,8 @@ def maxSum(arr, k):
 
     # compute the sum of the first window of size k
     windowSum = sum(arr[0:k])
+    # ! testing
+    print("windowSum: ", windowSum)
 
     # variable to store the max sum (initialize to the sum of the first window)
     maxSum = windowSum
@@ -25,12 +27,15 @@ def maxSum(arr, k):
     # the current window
     for i in range(n - k):
         windowSum = windowSum - arr[i] + arr[i + k]
+        # ! testing
+        print("windowSum: ", windowSum, "-", arr[i], "+", arr[i + k])
+        
         if windowSum > maxSum:
             maxSum = windowSum
 
     return maxSum
 
-arr = [1, 4, 2, 10, 2, 3, 1, 0]
+arr = [1, 4, 2, 10, 2, 3, 1, 0, 20]
 k = 4
 print(maxSum(arr, k))
 
